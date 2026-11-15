@@ -16,7 +16,7 @@
 class Game {
 public:
     raylib::Window window;
-    bool debugDraw = false;
+    bool debugDraw = true;
 
     Game();
     void Update();
@@ -24,7 +24,7 @@ public:
     void DebugDraw();
 
     Player player;
-    Enemy enemy;
+    std::vector<Enemy*> enemies;
 };
 
 #endif //RAYLIBGAMEOFF_GAME_HPP

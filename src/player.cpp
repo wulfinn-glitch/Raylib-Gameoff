@@ -24,7 +24,7 @@ void Player::DetectInputs() {
     direction = direction.Normalize();
 
     if (IsKeyPressed(KEY_E)) {
-        std::printf("Hello");
+        std::printf("Attack\n");
     }
 }
 

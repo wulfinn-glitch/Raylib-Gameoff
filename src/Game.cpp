@@ -6,28 +6,35 @@
 
 Game::Game() :
     window(screenWidth, screenHeight, "Game"),
-    player(screenWidth/2, screenHeight-50),
-    enemy(screenWidth/2, 100.0)
+    player(screenWidth/2, screenHeight-50)
 {
-    SetConfigFlags(FLAG_MSAA_4X_HINT);
-
     SetTargetFPS(60);
     rlImGuiSetup(true);
+
+    enemies.push_back(new Enemy(screenWidth/2, 100.0, this));
 }
 
 void Game::Update() {
     player.Update(GetFrameTime());
+    for (const auto enemy : enemies) {
+        enemy->Update();
+    }
 }
 
 void Game::Draw() {
-    window.ClearBackground(BLACK);
+    window.ClearBackground(bgColor);
     DrawFPS(5, 5);
 
     player.Draw();
-    enemy.Draw();
+    for (const auto enemy : enemies) {
+        enemy->Draw();
+    }
 }
 
 void Game::DebugDraw() {
     // Draw debug stuff
     player.DebugDraw();
+    for (const auto enemy : enemies) {
+        enemy->DebugDraw();
+    }
 }

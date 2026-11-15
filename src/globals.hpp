@@ -9,4 +9,6 @@
 constexpr auto screenWidth = 800;
 constexpr auto screenHeight = 800;
 
+constexpr auto bgColor = raylib::Color(14, 14, 14);
+
 #endif //RAYLIBGAMEOFF_GLOBALS_HPP
