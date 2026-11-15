@@ -16,7 +16,12 @@ add_subdirectory(external/raylib-cpp)
 
 
 # Add executable target
-add_executable(RaylibGameOff src/main.cpp)
+add_executable(RaylibGameOff src/main.cpp
+        src/globals.hpp
+        src/player.cpp
+        src/player.hpp
+        src/ColliderDebug.cpp
+        src/ColliderDebug.hpp)
 
 # Link library and external dependencies
 target_link_libraries(RaylibGameOff PRIVATE raylib raylib_cpp)
