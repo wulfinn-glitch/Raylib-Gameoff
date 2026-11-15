@@ -6,17 +6,9 @@
 #define RAYLIBGAMEOFF_BOSS_HPP
 #include "EnemyBase.hpp"
 #include "raylib-cpp.hpp"
-
-struct TentacleEnd {
-    raylib::Vector2 position;
-    raylib::Vector2 velocity;
-    float speed = 450.0f;
-    raylib::Vector2 acceleration;
-    raylib::Color color;
-};
+#include "Tentacle.hpp"
 
 class Enemy : public EnemyBase {
-
 
 public:
     void* gameref;
@@ -38,8 +30,7 @@ private:
 
     raylib::Color color = LIGHTGRAY;
 
-    std::vector<TentacleEnd> tentacles;
-
+    std::vector<Tentacle> tentacles;
 };
 
 #endif //RAYLIBGAMEOFF_BOSS_HPP

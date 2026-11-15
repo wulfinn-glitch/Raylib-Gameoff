@@ -17,8 +17,10 @@ void Enemy::Update() {
         ShootPlayer();
     }
 
-    for (int i = 0; i < tentacles.size(); i++) {
-        tentacles[i].position += tentacles[i].velocity;
+    for (auto & tentacle : tentacles) {
+        tentacle.position += tentacle.velocity;
+        auto *player = static_cast<Player*>(tentacle.player);
+        player->AttackTentacle(tentacle.position, tentacleRadius);
     }
 }
 
@@ -27,9 +29,10 @@ void Enemy::ShootPlayer() {
     auto player_pos = game->player.GetPosition();
     auto dir = (player_pos - position).Normalize();
 
-    TentacleEnd tentacleEnd;
+    Tentacle tentacleEnd;
     tentacleEnd.position = position;
     tentacleEnd.velocity = dir * tentacleEnd.speed * game->window.GetFrameTime();
+    tentacleEnd.player = &game->player;
 
     tentacles.push_back(tentacleEnd);
 }

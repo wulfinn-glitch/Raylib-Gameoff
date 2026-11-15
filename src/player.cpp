@@ -23,6 +23,9 @@ void Player::DetectInputs() {
 
     direction = direction.Normalize();
 
+}
+
+void Player::AttackTentacle(raylib::Vector2 pos, float hitboxRadius) {
     if (IsKeyPressed(KEY_E)) {
         std::printf("Attack\n");
     }

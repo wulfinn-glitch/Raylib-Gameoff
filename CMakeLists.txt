@@ -25,7 +25,9 @@ add_executable(RaylibGameOff src/main.cpp
         src/EnemyBase.cpp
         src/EnemyBase.hpp
         src/Game.cpp
-        src/Game.hpp)
+        src/Game.hpp
+        src/Tentacle.cpp
+        src/Tentacle.hpp)
 
 target_include_directories(RaylibGameOff PRIVATE
         external/imgui

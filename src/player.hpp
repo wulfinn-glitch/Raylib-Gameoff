@@ -13,6 +13,7 @@ public:
     raylib::Vector2 GetPosition();
 
     void DetectInputs();
+    void AttackTentacle(raylib::Vector2 pos, float hitboxRadius);
     void Update(float dt);
     void Move(raylib::Vector2 direction);
 
