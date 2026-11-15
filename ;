@@ -1,0 +1,39 @@
+#include "Game.hpp"
+
+// Main Game class
+
+int main(){
+  // Initialization
+  //--------------------------------------------------------------------------------------
+  Game game;
+  //--------------------------------------------------------------------------------------
+
+  // Main game loop
+  while (!game.window.ShouldClose()) {   // Detect window close button or ESC key
+    // Update
+    //----------------------------------------------------------------------------------
+    // Update your variables here
+    game.Update();
+    //----------------------------------------------------------------------------------
+
+    // Draw
+    //----------------------------------------------------------------------------------
+    while (game.window.Drawing()) {
+      game.Draw();
+
+      rlImGuiBegin();
+      ImGui::Begin("Debug Menu");
+      ImGui::Checkbox("Debug Menu", &game.debug);
+
+      if (debugDraw) {
+        game.DebugDraw();
+      }
+
+      ImGui::End();
+      rlImGuiEnd();
+    }
+    //----------------------------------------------------------------------------------
+  }
+
+  return 0;
+}

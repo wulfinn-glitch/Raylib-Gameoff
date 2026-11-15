@@ -4,3 +4,9 @@
 [submodule "external/raylib-cpp"]
 	path = external/raylib-cpp
 	url = https://github.com/RobLoach/raylib-cpp
+[submodule "external/rlImGui"]
+	path = external/rlImGui
+	url = https://github.com/raylib-extras/rlImGui
+[submodule "external/imgui"]
+	path = external/imgui
+	url = https://github.com/ocornut/imgui.git

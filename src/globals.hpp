@@ -9,6 +9,4 @@
 constexpr auto screenWidth = 800;
 constexpr auto screenHeight = 800;
 
-constexpr bool debugDraw = true;
-
 #endif //RAYLIBGAMEOFF_GLOBALS_HPP
