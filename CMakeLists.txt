@@ -12,6 +12,7 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 # add_library(MyLib src/library.cpp)
 add_subdirectory(external/raylib)
 add_subdirectory(external/raylib-cpp)
+add_subdirectory(external/entt)
 
 # Add executable target
 add_executable(RaylibGameOff src/main.cpp
@@ -27,7 +28,8 @@ add_executable(RaylibGameOff src/main.cpp
         src/Game.cpp
         src/Game.hpp
         src/Tentacle.cpp
-        src/Tentacle.hpp)
+        src/Tentacle.hpp
+)
 
 target_include_directories(RaylibGameOff PRIVATE
         external/imgui
@@ -42,4 +44,4 @@ target_sources(RaylibGameOff PRIVATE
         external/rlImGui/rlImGui.cpp
 )
 # Link library and external dependencies
-target_link_libraries(RaylibGameOff PRIVATE raylib raylib_cpp)
+target_link_libraries(RaylibGameOff PRIVATE raylib raylib_cpp EnTT::EnTT)

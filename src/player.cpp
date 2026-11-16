@@ -22,7 +22,6 @@ void Player::DetectInputs() {
     if (IsKeyDown(KEY_S)) direction.y += 1;
 
     direction = direction.Normalize();
-
 }
 
 void Player::AttackTentacle(raylib::Vector2 pos, float hitboxRadius) {

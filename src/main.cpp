@@ -1,11 +1,14 @@
 #include "Game.hpp"
+#include <entt/entt.hpp>
 
 // Main Game class
 
 int main(){
-  // Initialization
-  //--------------------------------------------------------------------------------------
+
+  entt::registry registry;
+
   SetConfigFlags(FLAG_WINDOW_HIGHDPI | FLAG_MSAA_4X_HINT);
+  entt::entity game = registry.create();
   Game game;
   //--------------------------------------------------------------------------------------
 
